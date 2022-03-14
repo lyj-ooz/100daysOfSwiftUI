@@ -7,6 +7,30 @@
 
 import SwiftUI
 
+struct FlagImage: View {
+    var flag: String
+    
+    var body: some View {
+        Image(flag)
+            .renderingMode(.original)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .shadow(radius: 5)
+    }
+}
+
+struct GameText: View {
+    var text: String
+    var color: Color
+    var font: Font
+    
+    var body: some View {
+        Text(text)
+            .foregroundColor(color)
+            .font(font)
+        
+    }
+}
+
 struct ContentView: View {
 //    var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
     @State private var countries = ["estonia", "france", "germany", "ireland", "italy", "nigeria", "poland", "russia", "spain", "uk", "us"].shuffled()
@@ -30,15 +54,11 @@ struct ContentView: View {
             Spacer()
             
             VStack {
-                Text("Guess the Flag")
-                        .font(.largeTitle.bold())
-                        .foregroundColor(.white)
+                GameText(text: "Guess the Flag", color: .white, font: .largeTitle.bold())
                 
                 VStack(spacing: 15) {
                     VStack {
-                        Text("Tap the flag of")
-                            .font(.subheadline.weight(.heavy))
-                            .foregroundStyle(.secondary)
+                        GameText(text: "Tap the flag of", color: .secondary, font: .subheadline.weight(.heavy))
                         
                         Text(countries[correctAnswer])
                             .font(.largeTitle.weight(.semibold))
@@ -48,10 +68,7 @@ struct ContentView: View {
                         Button {
                             tapFlag(number)
                         } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .shadow(radius: 5)
+                            FlagImage(flag: countries[number])
                         }
                     }
                 }
@@ -63,9 +80,7 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: \(userScore)")
-                    .foregroundColor(.white)
-                    .font(.title.bold())
+                GameText(text: "Score: \(userScore)", color: .white, font: .title.bold())
                 
                 Spacer()
             }
