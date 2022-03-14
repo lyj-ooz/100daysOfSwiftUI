@@ -7,29 +7,7 @@
 
 import SwiftUI
 
-struct ChosenButton: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(.blue)
-            .foregroundColor(.white)
-            .clipShape(Capsule())
-    }
-}
-
-struct NormalButton: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(Color(hex: "#c4c4c4"))
-            .foregroundColor(.black)
-            .clipShape(Capsule())
-    }
-}
-
 struct ContentView: View {
-//    private let game = ["🪨Rock", "📄Paper", "✂️Scissors"]
-    
     private let game = ["Rock", "Paper", "Scissors"]
     private var result = ["Win", "Lose"]
     @State private var computerNum = Int.random(in: 0...2)
@@ -38,13 +16,6 @@ struct ContentView: View {
     @State private var gameRound = 1
     @State private var userChoice = "Rock"
     @State private var showGameEndAlert = false
-    
-//    var isUserWin: Bool {
-//        if userChoice == "Rock" {
-//
-//        }
-//        return true
-//    }
     
     var body: some View {
         VStack {
