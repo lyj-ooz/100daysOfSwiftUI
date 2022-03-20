@@ -41,6 +41,10 @@ struct ContentView: View {
     @State private var userScore = 0
     @State private var gameCount = 0
     @State private var finishingGame = false
+//    @State private var rotationAnimationAmount = 0.0
+    @State private var opacityAmount = 1.0
+    @State private var chosenButton = 0
+    @State private var isCardOpaque = false
     
     var body: some View {
         ZStack {
@@ -66,10 +70,18 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button {
-                            tapFlag(number)
+                            withAnimation {
+                                tapFlag(number)
+                            }
                         } label: {
                             FlagImage(flag: countries[number])
                         }
+                        .rotation3DEffect(
+                            .degrees(chosenButton == number ? 360 : 0),
+                            axis: (x: 0, y: 1, z: 0)
+                        )
+                        .opacity(isCardOpaque && !(chosenButton == number) ? 0.25 : 1)
+                        
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -101,6 +113,8 @@ struct ContentView: View {
     }
     
     func tapFlag(_ number: Int) {
+        chosenButton = number
+        
         if number == correctAnswer {
             scoreTitle = "Correct"
             userScore += 100
@@ -111,6 +125,7 @@ struct ContentView: View {
             scoreAlertMessage = "Oops - that's the flag of \(countries[correctAnswer]). Your score is \(userScore)"
         }
         
+        isCardOpaque = true
         showingScore = true
         gameCount += 1
         
@@ -118,6 +133,7 @@ struct ContentView: View {
     }
     
     func askQuestion() {
+        isCardOpaque = false
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
