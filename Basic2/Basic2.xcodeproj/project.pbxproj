@@ -11,6 +11,10 @@
 		3912101F27E8990300F02F41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912101E27E8990300F02F41 /* ContentView.swift */; };
 		3912102127E8990700F02F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3912102027E8990700F02F41 /* Assets.xcassets */; };
 		3912102427E8990700F02F41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3912102327E8990700F02F41 /* Preview Assets.xcassets */; };
+		3912102F27E89C6100F02F41 /* Oxygen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3912102C27E89C6100F02F41 /* Oxygen-Bold.ttf */; };
+		3912103027E89C6100F02F41 /* Oxygen-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3912102D27E89C6100F02F41 /* Oxygen-Light.ttf */; };
+		3912103127E89C6100F02F41 /* Oxygen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3912102E27E89C6100F02F41 /* Oxygen-Regular.ttf */; };
+		3912103427E8A76500F02F41 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912103327E8A76500F02F41 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		3912101E27E8990300F02F41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3912102027E8990700F02F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3912102327E8990700F02F41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3912102C27E89C6100F02F41 /* Oxygen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Bold.ttf"; sourceTree = "<group>"; };
+		3912102D27E89C6100F02F41 /* Oxygen-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Light.ttf"; sourceTree = "<group>"; };
+		3912102E27E89C6100F02F41 /* Oxygen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Regular.ttf"; sourceTree = "<group>"; };
+		3912103227E89D7600F02F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3912103327E8A76500F02F41 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +60,13 @@
 		3912101B27E8990300F02F41 /* Basic2 */ = {
 			isa = PBXGroup;
 			children = (
+				3912103227E89D7600F02F41 /* Info.plist */,
+				3912102B27E89C3F00F02F41 /* fonts */,
 				3912101C27E8990300F02F41 /* Basic2App.swift */,
 				3912101E27E8990300F02F41 /* ContentView.swift */,
 				3912102027E8990700F02F41 /* Assets.xcassets */,
 				3912102227E8990700F02F41 /* Preview Content */,
+				3912103327E8A76500F02F41 /* InfoView.swift */,
 			);
 			path = Basic2;
 			sourceTree = "<group>";
@@ -65,6 +77,16 @@
 				3912102327E8990700F02F41 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3912102B27E89C3F00F02F41 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3912102C27E89C6100F02F41 /* Oxygen-Bold.ttf */,
+				3912102D27E89C6100F02F41 /* Oxygen-Light.ttf */,
+				3912102E27E89C6100F02F41 /* Oxygen-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +147,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3912102F27E89C6100F02F41 /* Oxygen-Bold.ttf in Resources */,
 				3912102427E8990700F02F41 /* Preview Assets.xcassets in Resources */,
 				3912102127E8990700F02F41 /* Assets.xcassets in Resources */,
+				3912103127E89C6100F02F41 /* Oxygen-Regular.ttf in Resources */,
+				3912103027E89C6100F02F41 /* Oxygen-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3912101F27E8990300F02F41 /* ContentView.swift in Sources */,
+				3912103427E8A76500F02F41 /* InfoView.swift in Sources */,
 				3912101D27E8990300F02F41 /* Basic2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +298,7 @@
 				DEVELOPMENT_TEAM = NDRKRF3QZ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Basic2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +328,7 @@
 				DEVELOPMENT_TEAM = NDRKRF3QZ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Basic2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
