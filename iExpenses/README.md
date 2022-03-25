@@ -7,5 +7,5 @@
     -   asks SwfitUI to generate UUID
 -   Identifiable protocol
     -   add this protocol to data type that can be identified uniquely
-    -   it must have a property called 'id' that contains a unique identifier
+    -   it must have a property called 'id' that should be unique
     -   no need to use 'id' parameter of ForEach
