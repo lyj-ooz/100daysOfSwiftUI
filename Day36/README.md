@@ -5,7 +5,7 @@
 ### 1️⃣ Create multiple screens
 
 -   Class confirming to 'ObservableObject' protocol & @Published & @StateObject & @ObservedObject
-    -   @Published: if there is a change of the @Published property, iOS would make an 'announcement' about the change to SwiftUI views. The views that have the instance wrapped in @StateObject will notice the change.
+    -   @Published: if there is a change of the @Published property, iOS would "publish" an announcement about the change to SwiftUI views. The views that have the instance wrapped in @StateObject will notice the change.
         -   (@Published: 이게 붙은 프로퍼티가 변경되면 swiftUI 뷰한테 알려줌. 그러면 swiftUI 뷰들은 어떤 클래스가 알려줬는지 확인할 수 있나? 그건 @StateObject의 역할임. )
     -   ObservableObject: "we want other things to monitor this(which conforms to ObservableObject protocol) for any changes"
     -   @StateObject: when create the shared data for the first time
